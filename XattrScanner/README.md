@@ -80,13 +80,9 @@ Done
 
 
 We can see that /usr/bin/gnome-keyring-daemon has capability permitted: 0x0000000000004000
-
 Now we can run:
-
 $ capsh --decode=0x0000000000004000
-
 0x0000000000004000=cap_ipc_lock
-
 To see that it has capability cap_ipc_lock.
 
 
@@ -95,7 +91,5 @@ How to build?
 Just run: 
 
 $ make
-
 If you want make cross compile then run:
-
 $ CC_PATH=/path/to/your/version/of/g++/arm-linux-eabi- make
