@@ -36,7 +36,7 @@ Also if the name of attribute will be "security.capability" then it will decode 
 Example usages:  
   
 //1  
-$ ./xattrScanner -p /usr/bin  
+```$ ./xattrScanner -p /usr/bin  
 Scanning: /usr/bin  
 [+] (1) /usr/bin/gnome-keyring-daemon  
  capInheritable: 0x0000000000000000 capPermitted: 0x0000000000004000 capEfective: 0x01  
@@ -45,11 +45,11 @@ Scanning: /usr/bin
  capInheritable: 0x0000000000000000 capPermitted: 0x0000000000002000 capEfective: 0x00  
   
 Done  
-//  
+```//  
   
   
 //2  
-$ ./xattrScanner -p /  
+```$ ./xattrScanner -p /  
 Scanning: /  
 [+] (2) /home/user/Downloads/ofs.c  
 Name: user.xdg.origin.url Value: \x68\x74\x74\x70\x3a\x2f\x2f\x73\x65\x63\x6c\x69\x73\x74\x73\x2e\x6f\x72\x67\x2f\x6f\x73\x73\x2d\x73\x65\x63\x2f\x32\x30\x31\x35\x2f\x71\x32\x2f\x61\x74\x74\x2d\x37\x31\x37\x2f\x6f\x66\x73\x5f\x63\x2e\x62\x69\x6e  
@@ -58,13 +58,13 @@ Name: user.xdg.referrer.url Value: \x68\x74\x74\x70\x3a\x2f\x2f\x73\x65\x63\x6c\
 Value String ( http://seclists.org/oss-sec/2015/q2/717 )  
   
 Done  
-//  
+```//  
   
   
 We can see that /usr/bin/gnome-keyring-daemon has capability permitted: 0x0000000000004000  
 Now we can run:  
-$ capsh --decode=0x0000000000004000  
-0x0000000000004000=cap_ipc_lock  
+```$ capsh --decode=0x0000000000004000  
+0x0000000000004000=cap_ipc_lock``` 
 To see that it has capability cap_ipc_lock.  
   
   
