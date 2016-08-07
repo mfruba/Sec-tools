@@ -7,7 +7,7 @@ Try2Open will iterate over files provided in file and will try to open it in mod
 
 
 
-$ ./try2open 
+<pre>$ ./try2open 
 Usage:
  try2open list /data/local/tmp/list.txt r
  try2open list /data/local/tmp/list.txt w
@@ -15,11 +15,11 @@ Usage:
 
  try2open list list.txt mode - try to open all files listed in list.txt
  try2open single /dev/hiddenFile mode - try to open /dev/hiddenFile
- 	mode parameter can be specified 'r' for read only open or 'w' for write only open.
+ 	mode parameter can be specified 'r' for read only open or 'w' for write only open.</pre>
 
 
 To gereate file paths file you can use "find" binary:
-$ find /dev/ > /data/local/tmp/dev.txt
+<pre>$ find /dev/ > /data/local/tmp/dev.txt</pre>
   
   
 How to build?  

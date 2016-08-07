@@ -5,7 +5,7 @@ TryUnmappedRW will iterate over files provided in file, next it will try to open
 
 
 
-$ ./tryUnmappedRW 
+<pre>$ ./tryUnmappedRW 
 Usage:
  tryUnmappedRW list /data/local/tmp/list.txt r
  tryUnmappedRW list /data/local/tmp/list.txt w
@@ -13,12 +13,12 @@ Usage:
 
  tryUnmappedRW list list.txt mode - try to open all files listed in list.txt
  tryUnmappedRW single /dev/hiddenFile mode - try to open /dev/hiddenFile
- 	mode parameter can be specified 'r' for read only open or 'w' for write only open.
+ 	mode parameter can be specified 'r' for read only open or 'w' for write only open.</pre>
 
 
 
 To gereate file paths file you can use "find" binary:
-$ find /dev/ > /data/local/tmp/dev.txt
+<pre>$ find /dev/ > /data/local/tmp/dev.txt</pre>
   
   
 How to build?  
