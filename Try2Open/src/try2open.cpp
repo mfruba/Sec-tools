@@ -63,7 +63,7 @@ void showHelp()
 			<< " try2open list /data/local/tmp/list.txt r" << std::endl
 			<< " try2open list /data/local/tmp/list.txt w" << std::endl
 			<< " try2open single /dev/hiddenFile r" << std::endl << std::endl
-			<< " try2open list list.txt mode - try to open all files listed in list txt" << std::endl	
+			<< " try2open list list.txt mode - try to open all files listed in list.txt" << std::endl	
 			<< " try2open single /dev/hiddenFile mode - try to open /dev/hiddenFile" << std::endl
 			<< " 	mode parameter can be specified 'r' for read only open or 'w' for write only open." << std::endl;
 }
@@ -74,12 +74,14 @@ int char2flags(char flag)
 	{
 		case 'R':
 		case 'r':
+		default:
 			return O_RDONLY;
 			break;
 		case 'W':
 		case 'w':
 			return O_WRONLY;
 			break;
+
 	}
 	return O_RDONLY;
 }

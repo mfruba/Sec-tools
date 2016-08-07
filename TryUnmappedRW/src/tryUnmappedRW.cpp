@@ -29,7 +29,7 @@
 
 char * maliciousPtr = (char *)0x4141414141414141;
 typedef ssize_t (* myRWFunc)(int fd, void * path, size_t len);
-myRWFunc func;
+myRWFunc func = NULL;
 
 int tryUnmappedRW(const char * path, int flags)
 {
@@ -68,11 +68,11 @@ int scanFileList(std::string & fileList, int mode)
 void showHelp()
 {
 	std::cerr << "Usage:" << std::endl 
-			<< " try2open list /data/local/tmp/list.txt r" << std::endl
-			<< " try2open list /data/local/tmp/list.txt w" << std::endl
-			<< " try2open single /dev/hiddenFile r" << std::endl << std::endl
-			<< " try2open list list.txt mode - try to open all files listed in list txt" << std::endl	
-			<< " try2open single /dev/hiddenFile mode - try to open /dev/hiddenFile" << std::endl
+			<< " tryUnmappedRW list /data/local/tmp/list.txt r" << std::endl
+			<< " tryUnmappedRW list /data/local/tmp/list.txt w" << std::endl
+			<< " tryUnmappedRW single /dev/hiddenFile r" << std::endl << std::endl
+			<< " tryUnmappedRW list list.txt mode - try to open all files listed in list.txt" << std::endl	
+			<< " tryUnmappedRW single /dev/hiddenFile mode - try to open /dev/hiddenFile" << std::endl
 			<< " 	mode parameter can be specified 'r' for read only open or 'w' for write only open." << std::endl;
 }
 
@@ -82,6 +82,7 @@ int char2flags(char flag)
 	{
 		case 'R':
 		case 'r':
+		default:
 			func = (myRWFunc)&read;
 			return O_RDONLY;
 			break;
